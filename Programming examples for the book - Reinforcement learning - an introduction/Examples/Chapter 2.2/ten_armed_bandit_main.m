@@ -12,3 +12,4 @@ hold on;
 rewards=ten_armed_bandit_testbed(0.1);
 plot(rewards,'g');
 hold off;
+legend('greedy','epsilon=0.01','epsilon=0.1');
