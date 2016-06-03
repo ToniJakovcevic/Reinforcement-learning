@@ -4,5 +4,5 @@ The book suggests breaking ties arbitrarily, but I picked breaking ties randomly
 
 This is the result:
 
-![image](Chapter 2.2/resultspng.png "Results")
+![image](resultspng.png "Results")
 
