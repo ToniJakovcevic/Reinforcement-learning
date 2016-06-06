@@ -4,5 +4,5 @@ The example is covering UCB and comparing it to e-greedy
 
 This is the result:
 
-![image](results_Averages.png "Results (average reward)")
+![image](results_averages.png "Results (average reward)")
 ![image](results_Percentages.png "Results (% optimal action)")
