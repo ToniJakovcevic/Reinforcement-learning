@@ -1,8 +1,6 @@
-This is my implementation of 10 armed bandit example covered in chapter 2.2 of the book (second edition)
-It slightly differs from the instructions in the case we have several same Qt values for different actions.
-The book suggests breaking ties arbitrarily, but I picked breaking ties randomly, it makes more sense.
+This is my implementation of 10 armed bandit example covered in chapter 2.5 of the book (second edition) using optimistic greedy and realicstic (epsilon=0.1) initial values.
 
 This is the result:
 
-![image](resultspng.png "Results")
-
+![image](results_Averages.png "Results (average reward)")
+![image](results_Percentages.png "Results (% optimal action)")
