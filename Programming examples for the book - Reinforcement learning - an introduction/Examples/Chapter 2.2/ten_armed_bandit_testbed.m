@@ -3,8 +3,7 @@ function rewards=ten_armed_bandit_testbed(epsilon)
 numSteps=1000;
 
 %Generate the position of the ceneter of distribution for every arm 
-arms=rand(10,2000);
-arms=arms*4-2; %Positioned randomly int the interval [-2,2]
+arms=normrnd(zeros(10,2000),1);
 
 numTimesUsed=zeros(10,2000);
 Qt=zeros(10,2000);
