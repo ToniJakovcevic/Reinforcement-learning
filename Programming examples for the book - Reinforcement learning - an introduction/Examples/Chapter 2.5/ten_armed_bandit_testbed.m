@@ -11,6 +11,8 @@ Qt=repmat(bias,10,2000);
 rewards=zeros(1000,1);
 optimalActPercentage=zeros(1000,1,'double');
 
+alpha=0.1; %This example uses constant step size parameter
+
 %Find best action for each bandit
 optimalActions=zeros(2000,1,'double');
 for step=1:2000
@@ -32,7 +34,7 @@ for step=1:1000
         end
         reward= normrnd(arms(action,bandit),1);
         numTimesUsed(action,bandit)=numTimesUsed(action,bandit)+1;
-        Qt(action,bandit)=Qt(action,bandit)+(1/numTimesUsed(action,bandit))*(reward-Qt(action,bandit));
+        Qt(action,bandit)=Qt(action,bandit)+alpha*(reward-Qt(action,bandit));
         sumRewards=sumRewards+reward;
         if(action==optimalActions(bandit)) 
             optActCount=optActCount+1;
