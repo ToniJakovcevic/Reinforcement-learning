@@ -2,5 +2,5 @@ This is my implementation of 10 armed bandit example covered in chapter 2.5 of t
 
 This is the result:
 
-![image](results_Averages.png "Results (average reward)")
-![image](results_Percentages.png "Results (% optimal action)")
+![image](reults_Averages.png "Results (average reward)")
+![image](reults_Percentages.png "Results (% optimal action)")
