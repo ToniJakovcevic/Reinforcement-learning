@@ -11,7 +11,6 @@ Qt=zeros(10,2000);
 rewards=zeros(1000,1);
 optimalActPercentage=zeros(1000,1,'double');
 
-Nt=zeros(10,2000); %Number of times action is selected
 c=2; %UCB parameter
 
 %Find best action for each bandit
@@ -30,17 +29,16 @@ for step=1:1000
         if(strcmp(algorithm,'UCB')==1) %using UCB action selection
             a_values=zeros(10,1); % action values according to UCB
             for a=1:10
-                if Nt(a)==0
+                if numTimesUsed(a,bandit)==0
                     action=a;
                     break;
                 end;
-                a_values(a)=Qt(a,bandit)+c*sqrt(log(step)/Nt(a,bandit));
+                a_values(a)=Qt(a,bandit)+c*sqrt(log(step)/numTimesUsed(a,bandit));
             end
             [M2,I2]=max(a_values);
             if(action==0)
                 action=I2;
             end
-            Nt(action,bandit)=Nt(action,bandit)+1;
         elseif(strcmp(algorithm,'e-greedy')==1) %using e-greedy action selection
             %selecting random or greedy action
             if rand<epsilon

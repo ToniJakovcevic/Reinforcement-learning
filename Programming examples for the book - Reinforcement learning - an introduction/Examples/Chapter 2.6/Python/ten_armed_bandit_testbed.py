@@ -1,7 +1,7 @@
 import numpy as np
 from findBestAction import find_best_action
 
-def ten_armed_bandit_testbed(epsilon,bias):
+def ten_armed_bandit_testbed(algorith, epsilon):
     # 10-armed bandit model
     numSteps = 1000
     # Generate the position of the center of distribution for every arm
