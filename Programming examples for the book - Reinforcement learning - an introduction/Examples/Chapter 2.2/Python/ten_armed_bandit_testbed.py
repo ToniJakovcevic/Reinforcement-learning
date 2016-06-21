@@ -1,18 +1,14 @@
 import numpy as np
 from findBestAction import find_best_action
 
-
-# jit decorator tells Numba to compile this function.
-# The argument types will be inferred by Numba when function is called.
-
 def ten_armed_bandit_testbed(epsilon):
     # 10-armed bandit model
     numSteps = 1000
     # Generate the position of the center of distribution for every arm
     arms = np.random.normal(0.0, 1.0, (10, 2000))
     numTimesUsed = np.zeros((10, 2000), dtype=np.int)
-    Qt = np.zeros((10, 2000))
-    rewards = np.zeros((1000, 1))
+    Qt = np.zeros((10, 2000),dtype=np.double)
+    rewards = np.zeros((1000, 1),dtype=np.double)
 
     for step in range(0,1000):
         sumRewards = 0

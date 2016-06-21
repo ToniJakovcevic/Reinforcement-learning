@@ -2,17 +2,14 @@ import numpy as np
 from findBestAction import find_best_action
 
 
-# jit decorator tells Numba to compile this function.
-# The argument types will be inferred by Numba when function is called.
-
 def ten_armed_bandit_testbed(epsilon,bias):
     # 10-armed bandit model
     numSteps = 1000
     # Generate the position of the center of distribution for every arm
     arms = np.random.normal(0.0, 1.0, (10, 2000))
     numTimesUsed = np.zeros((10, 2000), dtype=np.int)
-    Qt = np.full((10, 2000), bias)
-    rewards = np.zeros((1000, 1))
+    Qt = np.full((10, 2000), bias, dtype=np.double)
+    rewards = np.zeros((1000, 1), dtype=np.double)
     optimalActPercentage = np.zeros((1000, 1), dtype=np.double)
     alpha = 0.1  # This example uses constant step size parameter
 
@@ -39,10 +36,10 @@ def ten_armed_bandit_testbed(epsilon,bias):
             Qt[action, bandit] = Qt[action, bandit] + alpha*(reward-Qt[action,bandit])
             sumRewards = sumRewards + reward
             if (action == optimalActions[bandit]):
-                optActCount = optActCount + 1;
+                optActCount = optActCount + 1
 
         rewards[step] = sumRewards / 2000
-        optimalActPercentage[step] = optActCount / 2000;
+        optimalActPercentage[step] = optActCount / 2000
         # Display the number of current step to see the progress
         if step % 50 == 0:
             print(step)
