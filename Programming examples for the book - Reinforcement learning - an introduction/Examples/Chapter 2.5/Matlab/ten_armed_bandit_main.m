@@ -3,8 +3,8 @@
 %optimistic greedy
 [rewards1,optimalActPercentage1]=ten_armed_bandit_testbed(0,5);
 
-%realistic epsilon greedy, epsilon=0.01;
-[rewards2,optimalActPercentage2]=ten_armed_bandit_testbed(0.01,0);
+%realistic epsilon greedy, epsilon=0.1;
+[rewards2,optimalActPercentage2]=ten_armed_bandit_testbed(0.1,0);
 
 plot(rewards1);
 hold on;
