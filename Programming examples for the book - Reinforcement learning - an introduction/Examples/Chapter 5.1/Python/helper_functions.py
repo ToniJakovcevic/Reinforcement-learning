@@ -59,12 +59,3 @@ def plot_values(Vs):
     ax.plot_surface(X, Y, Vs, rstride=1, cstride=1, alpha=0.3)
     #fig.suptitle('State values - iteration ' + str(policyIteration), fontsize=20)
     plt.show()
-
-def plot_policy(policy):
-    fig = plt.figure()
-    ax1 = fig.add_subplot(111)
-    ax1.plot(policy, '-b', label='Vs')
-    plt.ylabel('Final policy (stake)', fontsize=16)
-    plt.xlabel('Capital', fontsize=16)
-    plt.show()
-
