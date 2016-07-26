@@ -3,6 +3,7 @@ Monte Carlo control with exploring starts - Python implementation of Blackjack e
 
 Results after 5,000,000 episodes:
 
+(Note: Axis with range 1-10 represent the dealers first card, and the axis with range 1-21 represents the sum of cards in players hand.)
 Policy (with usable ace)
 ![image](policy_usable_ace.png)
 
