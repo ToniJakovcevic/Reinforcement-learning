@@ -1,3 +1,4 @@
+##Jack's car rental - policy iteration
 The implementation of Jack's car rental example covered in chapter 4.3 of the book (second edition).
 
 
