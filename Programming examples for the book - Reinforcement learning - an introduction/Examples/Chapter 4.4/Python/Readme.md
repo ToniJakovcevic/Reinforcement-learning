@@ -1,3 +1,4 @@
+##The Gambler's problem - Value iteration
 The implementation of Gambler's problem example covered in chapter 4.4 of the book (second edition).
 
 
