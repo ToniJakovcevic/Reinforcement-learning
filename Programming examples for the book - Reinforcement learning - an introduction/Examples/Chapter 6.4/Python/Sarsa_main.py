@@ -33,7 +33,7 @@ while episode_num < 8001:
         timesteps += 1
         timesteps_vs_episodes[timesteps] = episode_num
         # Determine the next state based on wind and action
-        next_row = current_row - wind[current_col] #########################
+        next_row = current_row - wind[current_col]
         next_col = current_col
         if action == 1:
             next_col += 1
