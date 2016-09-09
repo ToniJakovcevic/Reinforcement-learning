@@ -25,7 +25,6 @@ def select_action(Q, current_state, epsilon, num_actions_from_b):
             max_el_value = max(Q[current_state, :])
             indices = np.where(Q[current_state, :] == max_el_value)
             action = np.floor(np.random.uniform(0, len(indices[0])))
-            #action = np.argmax(Q[current_state, :])
     return action
 
 
@@ -73,5 +72,4 @@ def select_action_double(Q1, Q2, current_state, epsilon, num_actions_from_b):
             max_el_value = max(Q_new)
             indices = np.where(Q_new == max_el_value)
             action = np.floor(np.random.uniform(0, len(indices[0])))
-            #action = np.argmax(Q[current_state, :])
     return action
