@@ -11,7 +11,7 @@ wind = [0, 0, 0, 1, 1, 1, 2, 2, 1, 0] # Values of wind speed for each column
 
 epsilon = 0.1
 alpha = 0.5
-gamma = 1
+gamma = 0.9
 episode_num = 0
 starting_row = 3
 starting_col = 0
@@ -19,7 +19,7 @@ goal_row = 3
 goal_col = 7
 timesteps = 0
 
-while episode_num < 8001:
+while timesteps < 8000:
     episode_num += 1
 
     # Set the starting state
@@ -61,7 +61,7 @@ while episode_num < 8001:
 
         action_next = select_action(Q, next_row, next_col, epsilon)
 
-        Q[current_row,current_col,action] += alpha*(reward + gamma*Q[next_row,next_col,action_next] - Q[current_row,current_col,action])
+        Q[current_row,current_col,action] += alpha*(reward + gamma*Q[next_row,next_col,action_next] - 1*Q[current_row,current_col,action])
         current_row = next_row
         current_col = next_col
         action = action_next
